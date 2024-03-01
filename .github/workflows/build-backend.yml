@@ -24,4 +24,4 @@ jobs:
         with:
           push: true
           context: ./backend
-          tags: ghcr.io/ymuichiro/symbol_web:latest
+          tags: ghcr.io/symbol-blockchain-community/symbol-web-cms:latest
