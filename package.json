@@ -1,0 +1,35 @@
+{
+  "name": "symbol-web",
+  "version": "0.0.1",
+  "description": "web site of symbol by community",
+  "author": "yuichiro - frinker <47295014+ymuichiro@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "url": "https://github.com/ymuichiro/symbol-web"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "scripts": {
+    "start": "run-p start:*",
+    "build": "run-s build:*",
+    "dev": "run-p dev:*",
+    "postinstall": "run-p install:*",
+    "clean": "run-s clean:* && rimraf node_modules",
+    "clean:backend": "rimraf backend/node_modules && rimraf backend/.tmp && rimraf backend/build",
+    "ci:backend": "npm ci --prefix backend",
+    "install:backend": "npm install --prefix backend",
+    "start:backend": "npm run develop --prefix backend",
+    "build:backend": "npm run build --prefix backend",
+    "dev:backend": "npm run develop --prefix backend",
+    "lint": "npm frontend lint --prefix"
+  },
+  "devDependencies": {
+    "husky": "^8.0.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2"
+  }
+}
